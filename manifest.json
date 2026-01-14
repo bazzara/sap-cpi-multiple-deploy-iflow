@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "CPI Bulk Deployer",
+    "version": "1.7",
+    "permissions": ["tabs", "activeTab", "scripting"],
+    "host_permissions": [
+      "https://*.hana.ondemand.com/*"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }

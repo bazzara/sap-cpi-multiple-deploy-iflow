@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 300px; font-family: sans-serif; padding: 10px; }
+    .search-box { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; }
+    .list-container { max-height: 300px; overflow-y: auto; border: 1px solid #ddd; margin-bottom: 10px; padding: 0; list-style: none; }
+    .item { display: flex; align-items: center; padding: 8px; border-bottom: 1px solid #eee; font-size: 12px; transition: background 0.3s; }
+    .item:hover { background: #f9f9f9; }
+    .btn-deploy { width: 100%; padding: 10px; background: #0070f3; color: white; border: none; cursor: pointer; border-radius: 4px; }
+    .btn-deploy:disabled { background: #ccc; cursor: not-allowed; }
+    .footer { font-size: 10px; color: #666; margin-top: 10px; text-align: center; }
+    .spinner { display: none; width: 12px; height: 12px; border: 2px solid #fff; border-bottom-color: transparent; border-radius: 50%; display: inline-block; vertical-align: middle; margin-right: 8px; animation: rotation 1s linear infinite; }
+    @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <h4>CPI Bulk Deployer</h4>
+  <input type="text" id="searchInput" class="search-box" placeholder="Search Artifacts...">
+  <div style="margin-bottom: 5px;">
+    <input type="checkbox" id="selectAll"> <label for="selectAll" style="font-size: 12px;">Select All</label>
+  </div>
+  <ul id="artifactList" class="list-container"></ul>
+  <div id="status" style="color: red; font-size: 11px; display: none; margin-bottom: 10px;"></div>
+  
+  <button id="deployBtn" class="btn-deploy" disabled>
+    <span id="spinner" class="spinner" style="display:none"></span>
+    <span id="btnText">Deploy Selected</span>
+  </button>
+  
+  <div id="footerInfo" class="footer">Detecting package...</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
